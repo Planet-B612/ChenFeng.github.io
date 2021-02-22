@@ -1,113 +1,396 @@
 <!DOCTYPE html>
 <!--
     Plain-Academic by Vasilios Mavroudis
-    Released under the Simplified BSD License/FreeBSD (2-clause) License.
+    Released under the  Simplified BSD License/FreeBSD (2-clause) License.
     https://github.com/mavroudisv/plain-academic
+    注意上边栏里的链接要改成可用的。建议所有文章、CV等的PDF也放到files文件夹里去，方便直接查看，网页里也返回这个文件；如，<a href="https://fengchen.github.io/files/dc_cv_en.pdf">CV</a>
+    注意，所有连接要正确，尤其是CV
 -->
-
 <html lang="en">
+
 <head>
-  <title>John Doe</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <link href='https://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
+    <title>Chen Feng - SJTU</title>
+    <meta charset="utf-8">
+    <link rel="icon" href="files/SJTU.png" type="image/icon type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="files/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link href="files/font.css" rel='stylesheet' type='text/css'>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <script>
+        function isHidden(oDiv){
+        var vDiv = document.getElementById(oDiv);
+        vDiv.style.display = (vDiv.style.display == 'none')?'block':'none';
+        }
+    </script>
+<style type="text/css">
+    *{padding:0;margin:0;}
+    .con{width:1000px;margin:0 auto;border:0px solid #ccc;padding:10px 0;}
+    .con:after{clear:both;display:block;width:0;height:0;content:""}
+    .pic{float:left;border:0px solid #ccc}/*定义图片模块的大小，为图片分配多少地方,border是图片周围边框的大小。这里面不写height width的话，用的时候就可以自己用style定义*/
+    /* .pic img{width:100px;height:80px;}*/ /* 插入图片本身的大小 */
+    /* .pic img{width:100px;height:80px;} */
+    .cent{float:left;width:450px;margin-left:30px;}/*文字部分的宽度和距离左侧的距离*/
+    </style>
 </head>
+
+
+<style>
+    :root {
+        --primary-color: #1B6FC2;
+        --secondary-color: #536390;
+        --font-color: #23476A;
+        --bg-color: #FEFDF9;
+        --heading-color: #292922;
+    }
+
+    [data-theme="dark"] {
+        --primary-color: #66CCCC;
+        --secondary-color: #818cab;
+        --font-color: #CCCCCC;
+        --bg-color: #2C2C2C;
+        --heading-color: #818cab;
+    }
+
+    hr {
+        display: block;
+        margin-top: 2.5em;
+        margin-bottom: 0.5em;
+        margin-left: auto;
+        margin-right: auto;
+        border-style: inset;
+        border-width: .5px;
+    }
+
+    body {
+        background-color: var(--bg-color);
+        color: var(--font-color);
+    }
+
+    a {
+        color: var(--primary-color);
+    }
+
+    a:hover {
+        color: var(--primary-color);
+    }
+
+    /*Simple css to style it like a toggle switch*/
+    .theme-switch-wrapper {
+        display: flex;
+        align-items: center;
+
+        em {
+            margin-left: 10px;
+            font-size: 1rem;
+        }
+    }
+
+
+    .theme-switch {
+        display: inline-block;
+        top: 7px;
+        height: 27px;
+        right: 70px;
+        position: absolute;
+        width: 32px;
+    }
+
+    .theme-switch input {
+        display: none;
+    }
+
+    .slider {
+        background-color: #b3b3b3;
+        bottom: 0;
+        cursor: pointer;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 12px;
+        transition: .4s;
+    }
+
+    .slider:before {
+        background-color: #FEFDF9;
+        top: 0;
+        content: "";
+        height: 15px;
+        left: 0px;
+        position: absolute;
+        transition: .4s;
+        width: 15px;
+    }
+
+    input:checked+.slider {
+        background-color: #66CCCC;
+    }
+
+    input:checked+.slider:before {
+        transform: translateX(17px);
+    }
+
+    .slider.round {
+        border-radius: 34px;
+    }
+
+    .slider.round:before {
+        border-radius: 90%;
+    }
+</style>
+
 <body>
-
-
-<!-- Navigation -->
-	<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-	  <div class="container">
-		<div class="navbar-header">
-		  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-		</div>
-
-		<!-- Collect the nav links, forms, and other content for toggling -->
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-		  <ul class="nav navbar-nav">
-				  <li><a href="index.html">Home</a></li>
-				  <li><a href="#">Projects</a></li>
-				  <li><a href="#publications">Publications</a></li> 
-				  <li><a href="#">CV</a></li> 
-		  </ul>
-		</div>
-	  </div>
-	</nav>
-  
-  <!-- Page Content -->
-    <div class="container">
-
-        <div class="row">
-
-            <!-- Entries Column -->
-            <div class="col-md-8" style="height: 100vh;">
-                
-                <!-- Main Image -->
-                <img class="img-responsive" src="photo.gif" alt=""><br>
-                
-                <div style="margin-top:3%; text-align:justify;">                
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing <a href="#">elit</a>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-					
-					<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-					
-					<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-                </div>
-            </div> 
-
-            <!-- Contact Information on the Sidebar -->
-            <div class="col-md-4">
-                <div style="font-family: 'Oswald', sans-serif; font-size: 32px;"><b>John Doe</b></div><br>
-                <p><b>john at doe.com</b><br>
-                <p>Random Department<br>
-                University of Randomness<br>
-                Street<br>
-                City <br>
-                Country<br>
-                </p>
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <ul class="nav navbar-nav">
+                <li><a href="https://planet-b612.github.io/#">Home</a></li>
+                <li><a href="https://planet-b612.github.io/#education">Education</a></li>
+                <li><a href="https://planet-b612.github.io/#publication">Publications</a></li>
+                <li><a href="https://planet-b612.github.io/#services">Services</a></li>
+                <!-- <li><a href="https://fengchen.github.io/#projects">Skills</a></li> -->
+                <li><a href="files/Chen Feng's Resume.pdf">CV</a></li>
+            </ul>
+            <div class="theme-switch-wrapper">
+                <label class="theme-switch" for="checkbox">
+                    <input type="checkbox" id="checkbox">
+                    <div class="slider round"></div>
+                </label>
             </div>
-            
-            
-            <!-- Links on the Sidebar -->
-            <div class="col-md-4" style="margin-top:2%">
-              <dd><a href="#">Google Scholar</a></dd> 
-              <dd><a href="#">Twitter</a></dd>
-              <dd><a href="#">LinkedIn</a></dd>
-            </div>
-            
-            
-            <!-- Publications -->
-            <div class="col-md-8" style="height: 100vh;">    
-                <h2 id="publications">Publications</h2>
-                
-                <strong>Peer-reviewed</strong><br/>
-                <ul>
-                <li class="paper" words="add, your, keywords, here"><a href="#">Full title</a> Names of the authors</li>
-                </ul>
-            
-                <strong>Technical Reports</strong><br/>
-                <ul>
-                <li class="paper" words="add, your, keywords, here"><a href="#">Full title</a>. Details of the report</li>
-                </ul>
-            </div>
-
-            
         </div>
+    </nav>
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            <!-- Entries Column -->            
+            <div class="col-md-3">
+                <!-- Contact Info on the Sidebar and image -->
+                <div style="font-family: Arial, Helvetica, sans-serif; font-size: 30px;"><b>  &#32;&#32; Chen Feng (冯晨)</b></div>
+                <br>
+                <img class="img-responsive" src="files/photo.jpg" height="640" width="484" alt=""><br>
+                <p style="font-size:16px;">PhD Candidate<br>
+                    <a href="http://iiot.sjtu.edu.cn/">IIOT</a>, SEIEE<br>
+                    Shanghai Jiao Tong University<br></p>
+                <p style="font-size:16px;"><b>Email:</b> <a href="mailto:fengchen@sjtu.edu.cn">fengchen@sjtu.edu.cn</a><br>
+                    <b>Office: </b>SEIEE 1-441, SJTU<br>
+                </p>
+                <!-- <p> <dd><a href="https://github.com/Planet-B612" target="_blank">GitHub</a></dd> </p> -->
+                <!-- <a href="https://clustrmaps.com/site/1b7hp"  title="Visit tracker"><img src="//www.clustrmaps.com/map_v2.png?d=aFvcEgzT6nRk5UpP08rIrzcDdzV7QGvLYALt3QKau28&cl=ffffff" /></a> -->
+            </div>
+            <!-- main info -->
+            <div class="row">
+                <div class="col-md-8">
+                    <div style="margin-top:5vh; margin-left:0vh; text-align:justify;">
+                        <div style="margin-left:0vh; text-align:left;">
+                            <div id="Aboutme" style="font-family: Arial, Helvetica, sans-serif; font-size: 27px;"><b>About me</b></div>
+                            <br>
+                            <p style="font-family: Arial; font-size:20px; margin-left:1vh">I obtained my bachelor degree in communication engineering from Tianjin University in China in July 2016. Currently, I am pursuing my PhD degree in <a href="http://iiot.sjtu.edu.cn/">IIOT laboratory</a> of Shanghai Jiao Tong University, supervised by <a href="http://www.cs.sjtu.edu.cn/~wang-xb/">Prof. Xinbing Wang</a> and <a href="http://www.cs.sjtu.edu.cn/~fu-ly/index.html">Prof. Luoyi Fu</a>.</p>
+                            <p style="font-family: Arial; font-size:20px; margin-left:1vh">My CV could be found <a href="files/dc_cv_en.pdf">here</a>. </p>
+                        </div>
+                        <hr>
+                        <div style="margin-top:3vh; margin-left:0vh text-align:left;">
+                            <div id="Education" style="font-family: Arial, Helvetica, sans-serif; font-size: 27px;"><b>Education</b></div>
+                            <br>
+                            <li style="font-family: Arial; font-size:18px; margin-left:1vh"> Ph.D. in Electronic Engineering, <b>Shanghai Jiao Tong University</b>, July 2021 (expected)<br>
+                            </li>
+                            <li style="font-family: Arial; font-size:18px; margin-left:1vh"> BSc in Communication Engineering, <b>Tianjin University</b>, July 2016 <br>
+                            </li>
+                        </div>
+                        <hr>
+                        <div style="margin-top:3vh; text-align:left;">
+                            <div id="Research" style="font-family: Arial, Helvetica, sans-serif; font-size: 27px;"><b>Research Interests</b></div>
+                            <br>
+                            <p style="font-family: Arial; font-size:18px; margin-left:1vh"> My research interests are mainly in the area of approximation algorithms and network analysis. Currently, I'm especially interested in the theory part of machine learning.</p>
+                        </div>
+                        <hr>
+                        <div style="margin-top:3vh; text-align:left;">
+                            <div id="publication" align="justify" , style="font-family: Arial, Helvetica, sans-serif; font-size: 27px;">
+                                <b>Publications</b>
+                        </div>
+                            <br>
+                            <li style="font-size:20px;margin-left:1vh;margin-bottom:13px;"> <u>Time Never Waits: Maximizing the Spread of Influence Within Given Time </u> </li>
+                            <p style="font-size:18px;margin-left:3vh;"><b>Chen Feng</b>, Luoyi Fu, Xinbing Wang <br>
+                                <i>Working Paper </i>
+                            </p>
+                            <!-- <p style="font-size:16px;margin-left:1vh"> <i>Working Paper </i></p> -->
 
+                            <br>
+                            <li style="font-size:20px;margin-left:1vh;margin-bottom:13px;line-height:22px; text-align:left"> <u>Will the Winner Take All? Competing Influences in Social Networks Under Information Overload </u> </li>
+                            <p style="font-size:18px;margin-left:3vh;"><b>Chen Feng</b>, Jiahui Sun, Luoyi Fu <br>
+                               Submitted to <i>International Symposium on Theory, Algorithmic Foundations, and Protocol Design for Mobile Networks and Mobile Computing </i><b>(Mobihoc)</b>, 2021 </p>
+                            
 
+<div style="cursor:pointer; font-size:18px; margin-left:3vh; margin-bottom:3px; color:#1b6fc5" onclick="isHidden('div0')"><b><u>More Details</u>:</b></div>
+    <div id="div0" style="display:none;margin-left:3vh;">
+      <p style="font-size:17px;"><b><u>The problem</u>:</b> Information competition finds its application in many scenarios (e.g., the spread of rumors and their refutations). A flurry of work has been dedicated to revealing the underlying competing dynamics but reaches different conclusions: "<i>the winner will take all</i>" and "<i>the winner will not take all</i>". Both findings have their evidences in the real world (e.g., Facebook vs. Myspcae, Android vs. iOS). Then, <i>will the winner take all?</i></p>
+          <div class="con">
+             <div class="pic" style="width:322px; height:167px"><IMG height=167 src="files/AI-inf_propagation_model-new.jpg" width=322>  
+             </div>
+             <div class="cent"><p style="font-size:17px;"><b><u>Our solution</u>:</b> To answer this question, we make a comprehensive study by considering two more factors: the incompleteness of the given network structure and the effect of information overload on user behavior. To this end, we first apply the well-known <b>Network Embedding</b> technique in machine learning to predict possible latent links and then take account of users’ information </p>
+           </div>
+          </div>
+      <p style="font-size:17px;margin-top:-20px;"> processing strategies under information overload. On this basis, we capture the competing dynamics by difference equations. To handle these equations, we transform them into <b>ordinary differential equations</b> (<b>ODEs</b>) by showing that the gap between the two forms are infinitesimals. Finally, we reply to the controversy by giving the condition under which the winner will take all.</p>
+                                <!-- <p><font size="18px" color="red" font-family="Arial">&nbsp;&nbsp;&nbsp;&nbsp;ewkwlwewl</font></p> -->
     </div>
-    <!-- /.container -->
-    
-    <!-- Other people may like it too! -->
-    <a style="color:#b5bec9;font-size:0.8em; float:right;" href="https://github.com/mavroudisv/plain-academic">Plain Academic</a> 
-    
+                            <br>
+                            <li style="font-size:20px;margin-left:1vh;margin-bottom:13px;line-height:22px"> <u> Neighborhood Matters: Influence Maximization in Social Networks with Limited Access </u> </li>
+                            <p style="font-size:18px;margin-left:3vh;margin-bottom:0px"> <b>Chen Feng</b>, Luoyi Fu, Bo Jiang, Haisong Zhang, Xinbing Wang et al. <br>
+                                <i>IEEE Transactions on Knowledge and Data Engineering</i><b> (TKDE)</b>, 2020 </p>
+                            <p style="font-size:18px;margin-left:3vh;margin-bottom:8px">  <u><a href="https://ieeexplore.ieee.org/document/9163286" target="_blank">[Main paper]</a></u>  <u><a href="https://ieeexplore.ieee.org/ielx7/69/4358933/9163286/supp1-3015387.pdf?tp=&arnumber=9163286" target="_blank">[Supplemental Material]</a></u> <u><a href="https://github.com/Planet-B612/Limited_IM" target="_blank">[Code]</a></u> </p> 
+
+<div style="cursor:pointer; font-size:18px; margin-left:3vh; margin-bottom:3px; color:#1b6fc5" onclick="isHidden('div1')"><b><u>More Details</u>:</b></div>
+<div id="div1" style="display:none;margin-left:3vh;">
+    <p style="font-size:17px;"><b><u>The problem</u>:</b> Influence maximization (IM) is a fundmental problem in network study, which is also widely studied in stochastic optimization, operation researches etc. Specifically, given a social network <img src="http://latex.codecogs.com/gif.latex?G"/>, a budget <img src="http://latex.codecogs.com/gif.latex?B"/>, the IM problem tries to select <img src="http://latex.codecogs.com/gif.latex?B"/> users (called seeds) to trigger the largest cascade of information. </p>
+    <p style="font-size:17px;"> &nbsp;&nbsp;&nbsp;&nbsp;Due to users' privacy concern etc., the selection of seeds is often limited to a small subset of users <img src="http://latex.codecogs.com/gif.latex?X"/>. Such limitation would significantly impair the spread of influence. </p>
+    <div class="con">
+        <div class="pic" style="width:240px; height:228px"><IMG height=228 src="files/Visio-two-stage_seeding_model.jpg" width=240>  </div>
+        <div class="cent"><p style="font-size:17px;"><b><u>Our solution</u>:</b> To approach this problem, we are lucky to prove that the <b>set-wise friendship paradox</b> phenomenon exists in any network, that is, the neighbors of users <img src="http://latex.codecogs.com/gif.latex?N(X)"/> are more influential than <img src="http://latex.codecogs.com/gif.latex?X"/> themselves. Thus, we are inspired to devise a two-stage framework to recruit the neighbors. Under this idea, we propose both <b>non-adaptive</b> and <b>adaptive</b> algorithms. In the non-adaptive algorithm, we design a two-stage coordinate descent framework which will finally converge. In the adaptive case, a series of algorithms are proposed with constant approximation ratios. </p>
+        </div>
+    </div>
+    <p style="font-size:17px;margin-top:-25px;">And the best algorithm achieves a larger ratio (<b>0.468</b>) than the state-of-the-art. Finally, extensive experiments are carried out, validating the superiority of our algorithms.</p>
+    <!-- <p><font size="18px" color="red" font-family="Arial">&nbsp;&nbsp;&nbsp;&nbsp;ewkwlwewl</font></p> -->
+</div>
+                            <br>
+                            <li style="font-size:20px;margin-left:1vh;margin-bottom:13px;line-height:22px"> <u>Evolution Matters: Content Transmission in Evolving Wireless Social Networks </u> </li>
+                            <p style="font-size:18px;margin-left:3vh;margin-bottom:0px"><b>Chen Feng</b>, Luoyi Fu, Xudong Wu, Xiaoying Gan, Xinbing Wang et al. <br>
+                            <i>IEEE Transactions on Wireless Communications</i><b> (TWC)</b>, 2020 </p>
+                            <p style="font-size:18px;margin-left:3vh;margin-bottom:8px">  <u><a href="https://ieeexplore.ieee.org/document/9153165" target="_blank">[Main paper]</a></u>  <u><a href="https://ieeexplore.ieee.org/ielx7/7693/9256393/9153165/supp1-3011035.pdf?tp=&arnumber=9153165" target="_blank">[Supplemental Material]</a></u> </p> 
+
+                            <div style="cursor:pointer; font-size:18px; margin-left:3vh; margin-bottom:3px; color:#1b6fc5" onclick="isHidden('div2')"><b><u>More Details</u>:</b></div>
+                            <div id="div2" style="display:none;margin-left:3vh;">
+                                <p style="font-size:17px;"><b><u>The problem</u>:</b> Content transmission is a prevalent form of user interaction. Transmission time is one of the most concerned metric in user experience. It is frequently overlooked that real networks are evolving over time with the advent of new users and the formation of new links, which would significantly affect the transmission efficiency. Then, what is the transmission time in evolving networks?</p>
+                                <p style="font-size:17px;"><b><u>Our solution</u>:</b> We first look into the the <b>mesoscopic structure</b> of the evolving network, and derive the upper bound and lower bound of the neighborhood size. On this basis, we strategically set the transmission parameters to guarantee that each user would find a holder for request with high probability. Finally, we derive the <b>upper bound</b> and <b>lower bound</b> of the transmission time in both static case and mobile case. Moreover, a general result about probability analysis is derived when analyzing the mobile case. Summarizing the results, we find that the transmission in evolving networks is actually faster than the non-evolving ones.</p>
+                                <div align="center"><IMG height=180 src="files/evolving model.jpg" width=398></div> 
+                                    <div class="text" style=" text-align:center;">Figure: The evolving model</div>
+                                <div class="pic" style="width:1px; height:1px;"> </div> 
+                                <div class="con">
+                                    <div class="pic" style="width:1px; height:1px">  </div>
+                                    <div class="cent">
+                                    </div>
+                                </div>
+                                <!-- <p><font size="18px" color="red" font-family="Arial">&nbsp;&nbsp;&nbsp;&nbsp;ewkwlwewl</font></p> -->
+                            </div>
+
+                            <br>
+
+                            <li style="font-size:20px;margin-left:1vh;margin-bottom:13px;line-height:22px"> <u> Relay-Assisted Multicast With Markov Mobility </u> </li>
+                            <p style="font-size:18px;margin-left:3vh;margin-bottom:0px"> Xiaoying Gan, <b>Chen Feng</b>, Zhida Qin, Ge Zhang, Huaying Wu, Luoyi Fu et al. <br>
+                                <i>IEEE Transactions on Network Science and Engineering</i><b> (TNSE)</b>, 2019 </p>
+                            <p style="font-size:18px;margin-left:3vh;margin-bottom:8px">  <u><a href="https://ieeexplore.ieee.org/document/8657788" target="_blank">[Main paper]</a></u>  <u><a href="https://ieeexplore.ieee.org/ielx7/6488902/9184321/8657788/tnse2902801_supp.pdf?tp=&arnumber=8657788" target="_blank">[Supplemental Material]</a></u> </p> 
+
+                            <br>
+
+                            <li style="font-size:20px;margin-left:1vh;margin-bottom:13px;line-height:22px"> <u> A greedy-based approach of fast transaction broadcasting in bitcoin networks </u> </li>
+                            <p style="font-size:18px;margin-left:3vh;margin-bottom:0px"> Haonan Zhang, <b>Chen Feng</b>, Xinbing Wang <br>
+                            <i>Proceedings of the ACM Turing Celebration Conference - China</i><b> (TURC)</b>, 2019 </p>
+                            <p style="font-size:18px;margin-left:3vh;margin-bottom:0px">  <u><a href="https://dl.acm.org/doi/10.1145/3321408.3321590" target="_blank">[PDF]</a></u> </p> 
+                            <br>
+                        </div>
+
+                        <hr>
+                        <div style="margin-top:3vh; text-align:left;">
+                            <div id="services" align="justify", style="font-family: Arial, Helvetica, sans-serif; font-size: 27px;">
+                                <b>Services</b>
+                            </div>
+                            <br>
+                            <li style="font-size:20px;margin-left:1vh;margin-bottom:1px;line-height:25px"> Journal Paper Reviewer for</li> <!--<u><a href=""> For more</a></u></li>-->
+                            <li style="font-size:18px;list-style-type:none; margin-left:5vh;margin-bottom:5px;line-height:22px">IEEE Transactions on Networking (TON), 2019, 2020 <br>
+                                IEEE Transactions on Mobile Computing (TMC), 2017  <br>
+                                IEEE Transactions on Big Data (TBD), 2018  <br>
+                                IEEE Transactions on Sensor Networks (TOSN), 2018, 2019<br>
+                                IEEE Transactions on Network Science and Engineering (TNSE), 2017, 2018, 2019 <br>
+                                China Communications (ChinaCom), 2017, 2018, 2019<br>
+                                IEEE Wireless Communications Magazine (WCM), 2020 <br>
+                            </li>
+                            <li style="font-size:20px;margin-left:1vh;margin-bottom:1px;line-height:25px">Conference Paper Reviewer for</li>
+                            <li style="font-size:18px;list-style-type:none; margin-left:5vh;margin-bottom:5px;line-height:22px">International Symposium on Theory, Algorithmic Foundations, and Protocol Design for Mobile Networks and Mobile Computing (MobiHoc), 2018, 2019 <br>
+                                International Conference on Computer Communications (INFOCOM), 2019, 2021 <br>
+                                International Conference on Measurement and Modeling of Computer Systems (SIGMETRICS), 2020<br>
+                                International Conference on Mobile Computing and Networking (MobiCom), 2018, 2019<br>
+                                IEEE International Conference on Network Protocols (ICNP), 2018, 2019<br>
+                                International Conference on Sensing, Communication and Networking (SECON), 2018<br>
+                                International Conference on Distributed Computing Systems (ICDCS), 2018<br>
+                                International Symposium on Modeling and Optimization in Mobile, Ad Hoc and Wireless Networks (WiOpt), 2018<br>
+                                IEEE/ACM International Symposium on Quality of Service (IWQOS), 2019<br>
+                                IEEE International Conference on Communications (ICC), 2018<br>
+                                IEEE Global Communications Conference (GLOBECOM), 2017, 2018, 2019 </li>
+                            <li style="font-size:20px;margin-left:1vh;margin-bottom:5px;line-height:25px">Operating the conference management system of TURC, 2018</li>
+                            <li style="font-size:20px;margin-left:1vh;margin-bottom:1px;line-height:25px">Assisting the proposal examination in the Office of Research Management of SJTU, 2018</li>
+                        </div>
+                        <hr>
+                        <div style="margin-top:3vh; text-align:left;">
+                            <div id="teaching" align="justify" , style="font-family: Arial, Helvetica, sans-serif; font-size: 27px;">
+                                <b>Teaching Assistant</b>
+                            </div>
+                            <br>
+                            <li style="font-size:20px;margin-left:1vh;margin-bottom:5px;line-height:25px">Intelligent Internet of Things, <i>Undergraduate Course</i>, 2019</li>
+                            <li style="font-size:20px;margin-left:1vh;margin-bottom:5px;line-height:25px"> Introduction to the Mobile Internet, <i>Undergraduate Course</i>, 2019</li>
+                        </div>
+                        <hr>
+                        <div style="margin-top:3vh; text-align:left;">
+                            <div id="teaching" align="justify" , style="font-family: Arial, Helvetica, sans-serif; font-size: 27px;">
+                                <b>Projects</b>
+                            </div>
+                            <br>
+                            <li style="font-size:20px;margin-left:1vh;margin-bottom:5px;line-height:25px"><b>National Key R&D Plan:</b> Multi-Dimensional Precise Portrayal based Academia Classification and Recommendation System, <i>Participation</i></li>
+                            <li style="font-size:20px;margin-left:1vh;margin-bottom:5px;line-height:25px"><b>Major International (Regional) Joint Research Project:</b> Key Technologies and Applications of Content Service based Mobile Internet, <i>Participation</i></li>
+                        </div>
+                        <hr>
+                        <div style="margin-top:3vh; text-align:left;">
+                            <div id="awards" align="justify" , style="font-family: Arial, Helvetica, sans-serif; font-size: 27px;">
+                                <b>Awards</b>
+                            </div>
+                            <br>
+                            <li style="font-size:20px;margin-left:1vh;margin-bottom:5px;line-height:25px">Best Progress Award in IIOT, 2018, 2020</li>
+                            <li style="font-size:20px;margin-left:1vh;margin-bottom:5px;line-height:25px">Remarkable Contribution Award in IIOT, 2019</li>
+                            <li style="font-size:20px;margin-left:1vh;margin-bottom:5px;line-height:25px">Peiyang Talents (top 1%), 2015</li>
+                            <li style="font-size:20px;margin-left:1vh;margin-bottom:5px;line-height:25px">National Scholarship (top 2%), 2014</li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <!-- Other people may like it too! -->
+            <div>
+                <p style="font-size:0.8em; float:right; color:#b5bec9;"> Thanks to <u> <a style="color:#b5bec9" target="_blank" href="https://mavroud.is/">Vasilios Mavroudis</a></u> for the <u><a style="color:#b5bec9" target="_blank" href="https://github.com/mavroudisv/plain-academic">template</a></u>!</p>
+            </div>
+            <!-- /.container -->
+            <script>
+            const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+
+            function switchTheme(e) {
+                if (e.target.checked) {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-theme', 'light');
+                }
+            }
+
+            toggleSwitch.addEventListener('change', switchTheme, false);
+
+            function switchTheme(e) {
+                if (e.target.checked) {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                    localStorage.setItem('theme', 'dark'); //add this
+                } else {
+                    document.documentElement.setAttribute('data-theme', 'light');
+                    localStorage.setItem('theme', 'light'); //add this
+                }
+            }
+
+
+            const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+
+            if (currentTheme) {
+                document.documentElement.setAttribute('data-theme', currentTheme);
+
+                if (currentTheme === 'dark') {
+                    toggleSwitch.checked = true;
+                }
+            }
+            </script>
+            <!-- <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span> -->
 </body>
 
 </html>
