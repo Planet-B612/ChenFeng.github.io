@@ -150,7 +150,7 @@
                 <li><a href="https://planet-b612.github.io/#publication">Publications</a></li>
                 <li><a href="https://planet-b612.github.io/#services">Services</a></li>
                 <!-- <li><a href="https://fengchen.github.io/#projects">Skills</a></li> -->
-                <li><a href="files/Chen Feng's Resume.pdf">CV</a></li>
+                <!-- <li><a href="files/Chen Feng's Resume.pdf">CV</a></li> -->
             </ul>
             <div class="theme-switch-wrapper">
                 <label class="theme-switch" for="checkbox">
@@ -186,7 +186,7 @@
                             <div id="Aboutme" style="font-family: Arial, Helvetica, sans-serif; font-size: 27px;"><b>About me</b></div>
                             <br>
                             <p style="font-family: Arial; font-size:20px; margin-left:1vh">I am a fifth-year Ph.D. candidate in Shanghai Jiao Tong University, pursuing my degree in Electronic Engineering under the supervision of <a href="http://www.cs.sjtu.edu.cn/~wang-xb/">Prof. Xinbing Wang</a> and <a href="http://www.cs.sjtu.edu.cn/~fu-ly/index.html">Prof. Luoyi Fu</a> in the <a href="http://iiot.sjtu.edu.cn/">IIOT laboratory</a>. Prior to that, I obtained my bachelor degree in communication engineering from Tianjin University in China in July 2016.</p>
-                            <p style="font-family: Arial; font-size:20px; margin-left:1vh">My CV could be found <a href="files/Chen Feng's Resume.pdf">here</a>. </p>
+                            <!-- <p style="font-family: Arial; font-size:20px; margin-left:1vh">My CV could be found <a href="files/Chen Feng's Resume.pdf">here</a>. </p> -->
                         </div>
                         <hr>
                         <div style="margin-top:3vh; margin-left:0vh text-align:left;">
@@ -240,14 +240,14 @@
                             <li style="font-size:20px;margin-left:1vh;margin-bottom:13px;line-height:22px"> <u> Neighborhood Matters: Influence Maximization in Social Networks with Limited Access </u> </li>
                             <p style="font-size:18px;margin-left:3vh;margin-bottom:0px"> <b>Chen Feng</b>, Luoyi Fu, Bo Jiang, Haisong Zhang, Xinbing Wang et al. <br>
                                 <i>IEEE Transactions on Knowledge and Data Engineering</i><b> (TKDE)</b>, 2020 </p>
-                            <p style="font-size:18px;margin-left:3vh;margin-bottom:8px">  <u><a href="https://ieeexplore.ieee.org/document/9163286" target="_blank">[Main paper]</a></u>  <u><a href="https://ieeexplore.ieee.org/ielx7/69/4358933/9163286/supp1-3015387.pdf?tp=&arnumber=9163286" target="_blank">[Supplemental Material]</a></u> <u><a href="https://github.com/Planet-B612/Limited_IM" target="_blank">[Code]</a></u> </p> 
+                            <p style="font-size:18px;margin-left:3vh;margin-bottom:8px">  <u><a href="files/TKDE-2019-01-0080.pdf" target="_blank">[Main paper]</a></u>  <u><a href="files/TKDE-2019-01-0080-supplemental%20material.pdf" target="_blank">[Supplemental Material]</a></u> <u><a href="https://github.com/Planet-B612/Limited_IM" target="_blank">[Code]</a></u> </p> 
 
 <div style="cursor:pointer; font-size:18px; margin-left:3vh; margin-bottom:3px; color:#1b6fc5" onclick="isHidden('div1')"><b><u>More Details</u>:</b></div>
 <div id="div1" style="display:none;margin-left:3vh;">
-    <p style="font-size:17px;"><b><u>The problem</u>:</b> Influence maximization (IM) is a fundamental problem in network study, which is also widely studied in stochastic optimization, operation researches etc. Specifically, given a social network <img src="http://latex.codecogs.com/gif.latex?G"/>, a budget <img src="http://latex.codecogs.com/gif.latex?B"/>, the IM problem tries to select <img src="http://latex.codecogs.com/gif.latex?B"/> users (called seeds) to trigger the largest cascade of information. </p>
+    <p style="font-size:17px;"><b><u>The problem</u>:</b> Influence maximization (IM) is a fundamental problem in network study, which is also closely related to stochastic optimization, operation researches etc. Specifically, given a social network <img src="http://latex.codecogs.com/gif.latex?G"/>, a budget <img src="http://latex.codecogs.com/gif.latex?B"/>, the IM problem tries to select <img src="http://latex.codecogs.com/gif.latex?B"/> users (called seeds) to trigger the largest cascade of information. </p>
     <p style="font-size:17px;"> &nbsp;&nbsp;&nbsp;&nbsp;Due to users' privacy concern etc., the selection of seeds is often limited to a small subset of users <img src="http://latex.codecogs.com/gif.latex?X"/>. Such limitation would significantly impair the spread of influence. </p>
-    <p style="font-size:17px;"><b><u>Our solution</u>:</b> To approach this problem, we are lucky to prove that the <b>set-wise friendship paradox</b> phenomenon exists in any network, that is, the neighbors of users <img src="http://latex.codecogs.com/gif.latex?N(X)"/> are more influential than <img src="http://latex.codecogs.com/gif.latex?X"/> themselves. Thus, we are inspired to devise a two-stage framework to recruit the neighbors. 
-    <p style="font-size:17px;"> &nbsp;&nbsp;&nbsp;&nbsp;Under this idea, we propose both <b>non-adaptive</b> and <b>adaptive</b> algorithms. In the non-adaptive algorithm, we design a two-stage coordinate descent framework which will finally converge. In the adaptive case, a series of greedy algorithms are proposed with <b>constant approximation ratios</b> by the submodular/adaptive submodular property. And the best algorithm achieves a larger ratio (<b>0.468</b>) than the state-of-the-art. Finally, extensive experiments in million-scale networks are carried out, validating the superiority of our algorithms.</p>
+    <p style="font-size:17px;"><b><u>Our solution</u>:</b> To approach this problem, we are lucky to prove the existence of a basic network structure, called <b>set-wise friendship paradox</b>, in all network, that is, the neighbors of users <img src="http://latex.codecogs.com/gif.latex?N(X)"/> are more influential than <img src="http://latex.codecogs.com/gif.latex?X"/> themselves. Thus, we are inspired to devise a two-stage framework to recruit the neighbors. 
+    <p style="font-size:17px;"> &nbsp;&nbsp;&nbsp;&nbsp;Under this idea, we propose both <b>non-adaptive</b> and <b>adaptive</b> algorithms. In the non-adaptive algorithm, we design a two-stage coordinate descent framework which will finally converge. In the adaptive case, a series of greedy algorithms are proposed with <b>constant approximation ratios</b> by leveraging the submodular/adaptive submodular property. And the best algorithm achieves a larger ratio (<b>0.468</b>) than the state-of-the-art. Finally, extensive experiments in million-scale networks are carried out, validating the superiority of our algorithms.</p>
     <div align="center"><IMG height=228 src="files/Visio-two-stage_seeding_model.jpg" width=240></div> 
         <div class="text" style=" text-align:center;">Figure: Illustration of the two-stage framework.</div>
     <div class="pic" style="width:1px; height:1px;"> </div> 
@@ -268,12 +268,12 @@
                             <li style="font-size:20px;margin-left:1vh;margin-bottom:13px;line-height:22px"> <u>Evolution Matters: Content Transmission in Evolving Wireless Social Networks </u> </li>
                             <p style="font-size:18px;margin-left:3vh;margin-bottom:0px"><b>Chen Feng</b>, Luoyi Fu, Xudong Wu, Xiaoying Gan, Xinbing Wang et al. <br>
                             <i>IEEE Transactions on Wireless Communications</i><b> (TWC)</b>, 2020 </p>
-                            <p style="font-size:18px;margin-left:3vh;margin-bottom:8px">  <u><a href="https://ieeexplore.ieee.org/document/9153165" target="_blank">[Main paper]</a></u>  <u><a href="https://ieeexplore.ieee.org/ielx7/7693/9256393/9153165/supp1-3011035.pdf?tp=&arnumber=9153165" target="_blank">[Supplemental Material]</a></u> </p> 
+                            <p style="font-size:18px;margin-left:3vh;margin-bottom:8px">  <u><a href="files/TW-Jun-19-0770.pdf" target="_blank">[Main paper]</a></u>  <u><a href="files/TW-Jun-19-0770-supplemental%20material.pdf" target="_blank">[Supplemental Material]</a></u> </p> 
 
                             <div style="cursor:pointer; font-size:18px; margin-left:3vh; margin-bottom:3px; color:#1b6fc5" onclick="isHidden('div2')"><b><u>More Details</u>:</b></div>
                             <div id="div2" style="display:none;margin-left:3vh;">
                                 <p style="font-size:17px;"><b><u>The problem</u>:</b> Content transmission is a prevalent form of user interaction, where transmission time acts as one of the most concerned metric in user experience. It is frequently overlooked that real networks are evolving over time with structural changes, which would significantly affect the transmission efficiency. Then, what is the transmission time in evolving networks?</p>
-                                <p style="font-size:17px;"><b><u>Our solution</u>:</b> We first look into the <b>mesoscopic structure</b> of the evolving network, and derive the upper bound and lower bound of the neighborhood size. On this basis, we strategically set the transmission parameters to guarantee that each user would find a holder for request with high probability. Finally, we derive the <b>upper bound</b> and <b>lower bound</b> of the transmission time in both static case and mobile case. Moreover, a general result about probability analysis is derived when analyzing the mobile case. Summarizing the results, we find that the transmission in evolving networks is actually faster than the non-evolving ones.</p>
+                                <p style="font-size:17px;"><b><u>Our solution</u>:</b> We reveal the <b>mesoscopic structure</b> of the evolving network by deriving the upper bound and lower bound of the neighborhood size. On this basis, we strategically set the transmission parameters to guarantee that each user would find a holder for request with high probability. Finally, we derive the <b>upper bound</b> and <b>lower bound</b> of the transmission time in both static case and mobile case. Moreover, a general result about probability analysis is derived when analyzing the mobile case. Summarizing the results, we find that the transmission in evolving networks is actually faster than the non-evolving ones.</p>
                                 <div align="center"><IMG height=180 src="files/evolving model.jpg" width=398></div> 
                                     <div class="text" style=" text-align:center;">Figure: The evolving model.</div>
                                 <div class="pic" style="width:1px; height:1px;"> </div> 
@@ -290,14 +290,14 @@
                             <li style="font-size:20px;margin-left:1vh;margin-bottom:13px;line-height:22px"> <u> Relay-Assisted Multicast With Markov Mobility </u> </li>
                             <p style="font-size:18px;margin-left:3vh;margin-bottom:0px"> Xiaoying Gan, <b>Chen Feng</b>, Zhida Qin, Ge Zhang, Huaying Wu, Luoyi Fu et al. <br>
                                 <i>IEEE Transactions on Network Science and Engineering</i><b> (TNSE)</b>, 2019 </p>
-                            <p style="font-size:18px;margin-left:3vh;margin-bottom:8px">  <u><a href="https://ieeexplore.ieee.org/document/8657788" target="_blank">[Main paper]</a></u>  <u><a href="https://ieeexplore.ieee.org/ielx7/6488902/9184321/8657788/tnse2902801_supp.pdf?tp=&arnumber=8657788" target="_blank">[Supplemental Material]</a></u> </p> 
+                            <p style="font-size:18px;margin-left:3vh;margin-bottom:8px">  <u><a href="files/TNSE2902801-main.pdf" target="_blank">[Main paper]</a></u>  <u><a href="files/TNSE2902801-supp.pdf" target="_blank">[Supplemental Material]</a></u> </p> 
 
                             <br>
 
                             <li style="font-size:20px;margin-left:1vh;margin-bottom:13px;line-height:22px"> <u> A greedy-based approach of fast transaction broadcasting in bitcoin networks </u> </li>
                             <p style="font-size:18px;margin-left:3vh;margin-bottom:0px"> Haonan Zhang, <b>Chen Feng</b>, Xinbing Wang <br>
                             <i>Proceedings of the ACM Turing Celebration Conference - China</i><b> (TURC)</b>, 2019 </p>
-                            <p style="font-size:18px;margin-left:3vh;margin-bottom:0px">  <u><a href="https://dl.acm.org/doi/10.1145/3321408.3321590" target="_blank">[PDF]</a></u> </p> 
+                            <p style="font-size:18px;margin-left:3vh;margin-bottom:0px">  <u><a href="files/ACM_TURC_paper_85.pdf" target="_blank">[PDF]</a></u> </p> 
                             <br>
                         </div>
 
